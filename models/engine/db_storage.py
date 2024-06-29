@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""New engine DBStorage"""
+"""
+model to mange DB storage using sqlAlchemy
+"""
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
@@ -17,7 +19,10 @@ classes = {"State": State, "City": City, "User": User,
 
 
 class DBStorage:
-    """DBStorage class"""
+    """
+        Manage DB storage for AirBnb
+        Clone using sqlAlchemy
+    """
     __engine = None
     __session = None
 
@@ -69,5 +74,5 @@ class DBStorage:
         self.__session = Session()
 
     def close(self):
-        """close method"""
-        self.__session.close()
+        """close session"""
+        self.__session.remove()
