@@ -8,8 +8,8 @@ from flask import Flask
 app = Flask("__name__")
 
 
-@app.route('/', strict_slashes=False)
-def hello():
+@app.route('/airbnb-onepage/', strict_slashes=False)
+def index():
     """Return a given string"""
     return ("Hello HBNB!")
 
